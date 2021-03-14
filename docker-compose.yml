@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  encurtador:
+    container_name: encurtador
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      #DATABASE_URL: postgres://root:root@postgres:5432/root
+      NODE_ENV: development
+      PORT: 8081
+    ports:
+      - "8081:8081"
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    ports:
+      - "5432:5432"    
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: root 
