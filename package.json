@@ -4,6 +4,7 @@
   "description": "Simples encurtador de URL",
   "author": "Rafael Dias",
   "license": "ISC",
+  "stack": "container",
   "main": "dist/src/server.ts",
   "scripts": {
     "build": "tsc -b",
