@@ -21,6 +21,10 @@ $ docker-compose up --build
 
 ## Test
 ```bash
+No arquivo docker-compose.yml alterar POSTGRES_DB: root para POSTGRES_DB: root_test
+```
+
+```bash
 $ npm run test
 $ npm run test_windows // windows
 ````
