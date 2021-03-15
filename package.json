@@ -4,7 +4,7 @@
   "description": "Simples encurtador de URL",
   "author": "Rafael Dias",
   "license": "ISC",
-  "stack" :"container",
+  "stack": "container",
   "main": "dist/src/server.ts",
   "scripts": {
     "build": "tsc -b",
@@ -14,7 +14,7 @@
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "NODE_ENV=test jest",
     "test_windows": "set NODE_ENV=test&&jest&&exit"
-  },  
+  },
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
@@ -28,6 +28,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "randomstring": "^1.1.5",

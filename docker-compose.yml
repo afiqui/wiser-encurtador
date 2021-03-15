@@ -1,5 +1,15 @@
 version: "3.7"
 services:
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    ports:
+      - "5432:5432"    
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: root 
   encurtador:
     container_name: encurtador
     build:
@@ -12,13 +22,4 @@ services:
       PORT: 8081
     ports:
       - "8081:8081"
-  postgres:
-    container_name: postgres
-    image: postgres:alpine
-    ports:
-      - "5432:5432"    
-    restart: always
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: root 
+  

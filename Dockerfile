@@ -14,7 +14,7 @@ RUN npm install --production
 
 COPY --from=builder /usr/app/dist ./dist
 
-COPY ormconfig.docker.json ./ormconfig.json
+COPY ormconfig.docker.js ./ormconfig.js
 COPY .env .
 
 
