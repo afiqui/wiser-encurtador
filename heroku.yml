@@ -8,8 +8,6 @@ build:
   config:
     RAILS_ENV: development
 release:
-  command:
-    - ./deployment-tasks.sh
-  image: worker
+  image: web
 run:
-  web: node start
+  web: npm start
