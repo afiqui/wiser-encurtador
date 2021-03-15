@@ -6,6 +6,12 @@ class CreateRedirectController {
     async create(request: Request, response: Response){
         const {url} = request.body;
 
+        if (url == undefined){
+            return response.status(400).json({
+                error: "Param url undefined!"
+            })
+        }
+
         const redirectsRepository = getCustomRepository(RedirectRepository);
 
         const urlAlreadyExists = await redirectsRepository.findOne({
@@ -18,8 +24,13 @@ class CreateRedirectController {
             });
         }
 
+        
+        var expire_at = new Date()
+        expire_at.setDate(expire_at.getDate() + 1);            
+        
+
         const redirect = redirectsRepository.create({
-            url
+            url,expire_at
         })
 
         await redirectsRepository.save(redirect)

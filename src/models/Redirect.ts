@@ -27,14 +27,8 @@ class Redirect {
         if(!this.hash){
             this.hash = randomstring.generate(10)
         }
-        this.expire_at = this.expireDate()
     }
-
-    expireDate(){
-        var d = new Date()
-        d.setDate(d.getDate() + 1);
-        return d
-    }
+    
 
 }
 
